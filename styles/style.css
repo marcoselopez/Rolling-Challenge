@@ -10,6 +10,43 @@
   font-family: 'Merriweather', serif;
   /* outline: 1px solid red; */
 }
+/* NOTE COMMON STYLES  */
+#gradientSeparator{
+  height: 100px;
+  width: 100%;
+  background: rgb(238,236,221);
+  background: linear-gradient(0deg, rgba(238,236,221,1) 0%, rgba(255,255,255,1) 100%);
+}
+#gradientSeparatorBack{
+  height: 100px;
+  width: 100%;
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(238,236,221,1) 100%);
+}
+#title{
+  border-bottom: 1px solid var(--blue);
+  margin-bottom: 10px;
+}
+#text{
+  color: var(--purple);
+  font-size: 10px;
+  margin-bottom: 5px;
+}
+#separatorPurple{
+  height: 1;
+  width: 50%;
+  text-align: center;
+  border-bottom: 1px solid var(--purple);
+}
+#arrowPurple{
+  width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-top: 50px solid var(--purple);
+}
+
+/* NOTE HEADER STYLE */
 #navBar{
   display: flex;
   flex-direction: column;
@@ -17,19 +54,28 @@
   align-items: center;
   background-color: var(--blue);
   color: var(--yellow);
-  padding: 15px 0;
+  padding-top: 15px;
+  position: sticky;
+  top: 0px;
 }
 #navProfileBox{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   text-align: center;
+  padding-bottom: 15px;
+}
+#navProfileItems{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 #navProfileImage{
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  margin-right: 5px;
+  margin: 0px 10px;
+  border: 2px solid var(--yellow);
 }
 #navProfileMenu{
   display: flex;
@@ -51,6 +97,10 @@
   z-index: 2;
   transition-duration: .3s;
   display: none;
+  border-top: 1px solid var(--yellow);
+}
+.active{
+  display: block !important;
 }
 #navItem:hover{
   color: var(--blue);
@@ -72,4 +122,135 @@
   z-index: -1;
   opacity: 1;
   transition-duration: .3s;
+}
+
+/* NOTE ABOUT ME CONTENT */
+#aboutMeContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#aboutProfile{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--blue);
+  text-align: center;
+}
+#aboutProfileImage{
+  height: 250px;
+  transform: rotate(45deg);
+  border: 5px solid var(--blue);
+  margin: 70px 00;
+  box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 50%);
+}
+#aboutSkills{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--blue);
+  text-align: center;
+  margin: 25px 0;
+}
+#subTitle{
+  font-size: 9px;
+}
+.progress{
+  height: 10px;
+  width: 100%;
+  margin-top: 5px;
+}
+#SkillProgress{
+  width: 80%; 
+  margin-bottom: 10px;
+  font-size: .7rem;
+}
+.progress-bar{
+  background-color: var(--blue);
+  transition-duration: 2s;
+}
+
+/* NOTE RESUME CONTENT */
+#resumeContainer{
+  background-color: var(--yellow);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#resumeTitleBox{
+  padding-top: 10px;
+  color: var(--yellow);
+  background-color: var(--blue);
+  margin-bottom: 10px;
+}
+#resumeRow1{
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#resumeRow2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#resumeBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+.resumeTitle{
+  color: var(--yellow);
+  background-color: var(--blue);
+  border-radius: 2px;
+  text-align: center;
+  width: 100%;
+}
+.resumeLabel{
+  font-weight: lighter;
+  color: var(--blue);
+  text-align: center;
+}
+.resumeSmallLabel{
+  font-weight: lighter;
+  color: var(--blue);
+  font-size: 12px;
+}
+.resumeUL{
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--purple);
+  text-align: center;
+  list-style-type: none;
+  padding: 0;
+}
+.resumeLI{
+  margin-bottom: 10px;
+}
+@media (min-width: 1024px){
+  #resumeBox{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .resumeUL{
+    text-align: left;
+    list-style-type: square;
+    padding-left: 15px;
+  }
+  .resumeTitle{
+    width: 100%;
+  }
+  #resumeContainer{
+    align-items: flex-start;
+  }
+  #resumeRow1{
+    margin: 0;
+  }
 }
