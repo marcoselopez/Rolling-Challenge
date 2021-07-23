@@ -45,8 +45,17 @@
       border-right: 50px solid transparent;
       border-top: 50px solid var(--purple);
 }
+a, a:visited{
+  text-decoration: none;
+  color: var(--yellow);
+}
 
 /* NOTE HEADER STYLE */
+#header{
+  position: sticky;
+  top: 0px;
+  z-index: 2;
+}
 #navBar{
   display: flex;
   flex-direction: column;
@@ -55,8 +64,6 @@
   background-color: var(--blue);
   color: var(--yellow);
   padding-top: 15px;
-  position: sticky;
-  top: 0px;
 }
 #navProfileBox{
   display: flex;
