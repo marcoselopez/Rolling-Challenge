@@ -11,13 +11,13 @@
   /* outline: 1px solid red; */
 }
 /* NOTE COMMON STYLES  */
-#gradientSeparator{
+#gradientSeparatorY{
   height: 100px;
   width: 100%;
   background: rgb(238,236,221);
   background: linear-gradient(0deg, rgba(238,236,221,1) 0%, rgba(255,255,255,1) 100%);
 }
-#gradientSeparatorBack{
+#gradientSeparatorW{
   height: 100px;
   width: 100%;
   background: rgb(255,255,255);
@@ -54,7 +54,7 @@ a, a:visited{
 #header{
   position: sticky;
   top: 0px;
-  z-index: 2;
+  z-index: 5;
 }
 #navBar{
   display: flex;
@@ -260,4 +260,122 @@ a, a:visited{
   #resumeRow1{
     margin: 0;
   }
+}
+
+/* NOTE PROJECTS CONTENT */
+#projectsContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#projectBox1{
+  position: relative;
+  color: var(--yellow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 500px;
+  background-image: url("/images/project1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#projectBox1::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 50%;
+  height: 500px;
+  width: 100%;
+  z-index: 2;
+}
+#projectBox2{
+  color: var(--yellow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 500px;
+}
+#projectBox3{
+  color: var(--yellow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 500px;
+}
+#projectTopItem{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  z-index: 3;
+  display: none;
+}
+#projectBottomItem{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  z-index: 3;
+  display: none;
+}
+#boxNumber{
+  font-size: 60px;
+  margin-right: 10px;
+  text-shadow: 0px 0px 10px black;
+}
+#boxContent{
+  margin-left: 15px;
+  text-shadow: 0px 0px 10px black;
+}
+#lightButton{
+  position: relative;
+  border: 2px solid var(--yellow);
+  height: 30px;
+  width: 150px;
+  font-size: 12px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 3;
+}
+#lightButton:hover{
+  cursor: pointer;
+  text-shadow: 1px 1px 1px black;
+  z-index: 3;
+}
+#lightButton::before{
+  content: "";
+  transition-duration: .3s;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 50%;
+  background-color: var(--yellow);
+  opacity: 0;
+}
+#lightButton:hover::before{
+  color: var(--blue);
+  transition-duration: .3s;
+  top: 0;
+  bottom: 0;
+  opacity: 1;
+  z-index: -1;
+}
+#projectsTitleBox{
+  padding-top: 10px;
+  color: var(--yellow);
+  background-color: var(--blue);
+  margin-bottom: 50px;
 }
