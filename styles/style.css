@@ -291,7 +291,6 @@ a, a:visited{
   opacity: 50%;
   height: 500px;
   width: 100%;
-  z-index: 2;
 }
 #projectBox2{
   color: var(--yellow);
@@ -311,11 +310,11 @@ a, a:visited{
 }
 #projectTopItem{
   width: 100%;
-  display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   z-index: 3;
   display: none;
+  transition: all .5s;
 }
 #projectBottomItem{
   width: 100%;
@@ -325,6 +324,7 @@ a, a:visited{
   align-items: flex-start;
   z-index: 3;
   display: none;
+  transition: all .5s;
 }
 #boxNumber{
   font-size: 60px;
