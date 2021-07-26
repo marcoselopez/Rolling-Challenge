@@ -86,6 +86,19 @@ function hoverToggleOff3(){
   projectBottomItem3.setProperty('display', 'none')  
 }
 
+//NOTE FOOTER FLOATING MENU
+const floatingMenu = document.querySelector('#floatingMenu');
+let menuOpen = false;
+floatingMenu.addEventListener("click", () => {
+  if(!menuOpen){
+    floatingMenu.classList.add("open")
+    menuOpen = true;
+  } else {
+    floatingMenu.classList.remove("open");
+    menuOpen = false;
+  }
+});
+
 //NOTE EVENT LISTENERS
 toggle.addEventListener('click', toggleMenu, false);
 items.forEach(item => {

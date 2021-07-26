@@ -458,10 +458,146 @@ a, a:visited{
   align-items: center;
   background-color: var(--blue);
   box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 50%);
+  position: relative;
 }
-#footerBox{
+#footerPolygon{
   height: 150px;
   width: 100%;
   background-color: var(--yellow);
   clip-path: polygon(0 0, 100% 0, 100% 12%, 5% 100%, 0 100%);
+}
+#footerBox{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#footerSocials{
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+#github, #linkedin, #youtube{
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+#github{
+  background-image: url("/images/githubN.png");
+  background-position: center;
+  background-size: cover;
+  margin-left: 25px;
+  margin-top: 40px;  
+}
+#github:hover{
+  background-image: url("/images/github.png");
+  cursor: pointer;
+}
+#linkedin{
+  background-image: url("/images/linkedinN.png");
+  background-position: center;
+  background-size: contain;
+  margin-left: 10px;
+  margin-top: 40px;
+}
+#linkedin:hover{
+  background-image: url("/images/linkedin.png");
+  cursor: pointer;
+}
+#youtube{
+  background-image: url("/images/youtubeN.png");
+  background-position: center;
+  background-size: contain;
+  margin-left: 10px;
+  margin-top: 40px;
+}
+#youtube:hover{
+  background-image: url("/images/youtube.png");
+  cursor: pointer;
+}
+#footerRights{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#rights{
+  color: var(--yellow);
+  font-size: 10px;
+  margin-top: 0;
+}
+#footerLogo{
+  font-size: 60px;
+  margin-top: 15px;
+  margin-bottom: 0;
+  color: var(--yellow);
+  text-shadow: 0px 0px 20px black;
+}
+#anchor{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: var(--yellow);
+  font-size: 30px;
+}
+#anchor:hover{
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* NOTE FOOTER FLOATING MENU */
+#floatingMenu{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 45px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  background-color: var(--blue);
+  margin-right: 20px;
+  margin-bottom: 70px;
+  border-radius: 50%;
+  border: 2px solid var(--yellow);
+}
+#floatingBurguer{
+  width: 25px;
+  height: 3px;
+  background-color: var(--yellow);
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+}
+#floatingBurguer::before, #floatingBurguer::after{
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background-color: var(--yellow);
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+}
+#floatingBurguer::before{
+  transform: translateY(-5px);
+}
+#floatingBurguer::after{
+  transform: translateY(5px)
+}
+/* Animation */
+#floatingMenu.open #floatingBurguer{
+  transform: translateX(-50px);
+  background: transparent;
+}
+#floatingMenu.open #floatingBurguer::before{
+  transform: rotate(45deg) translate(35px, -35px);
+}
+#floatingMenu.open #floatingBurguer::after{
+  transform: rotate(-45deg) translate(35px, 35px);
 }
