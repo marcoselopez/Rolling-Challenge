@@ -1,19 +1,21 @@
 const toggle = document.querySelector('#navProfileMenu')
 const items = document.querySelectorAll('#navItem')
 //NOTE PROJECT ITEMS 1
-const projectTopItem1 = document.styleSheets[3].cssRules[47].style
-const projectBottomItem1 = document.styleSheets[3].cssRules[48].style
+const projectTopItem1 = document.styleSheets[3].cssRules[48].style
+const projectBottomItem1 = document.styleSheets[3].cssRules[49].style
 const projectbox1 = document.querySelector('#projectBox1')
 //NOTE PROJECT ITEMS 2
-const projectTopItem2 = document.styleSheets[3].cssRules[49].style
-const projectBottomItem2 = document.styleSheets[3].cssRules[50].style
+const projectTopItem2 = document.styleSheets[3].cssRules[50].style
+const projectBottomItem2 = document.styleSheets[3].cssRules[51].style
 const projectbox2 = document.querySelector('#projectBox2')
 //NOTE PROJECT ITEMS 3
-const projectTopItem3 = document.styleSheets[3].cssRules[51].style
-const projectBottomItem3 = document.styleSheets[3].cssRules[52].style
+const projectTopItem3 = document.styleSheets[3].cssRules[52].style
+const projectBottomItem3 = document.styleSheets[3].cssRules[53].style
 const projectbox3 = document.querySelector('#projectBox3')
+//NOTE FLOATING MENU
+const toggleFloat = document.querySelector('#floatingMenu')
+const itemsFloat = document.querySelectorAll('#navItemFloat')
 
-console.log(document.styleSheets[3].cssRules)
 
 //NOTE TOGGLE MENU WHEN CLICK ON MENU
 function toggleMenu(){
@@ -35,11 +37,39 @@ function toggleMenu(){
   }
 }
 
+//NOTE TOGGLE FLOATING MENU WHEN CLICK
+function toggleMenuFloat(){
+  let checkItem;
+  itemsFloat.forEach(item => {
+    if(item.className.indexOf("active") > -1){
+      checkItem = true;
+    } else {
+      checkItem = false;
+    }
+  })
+  
+  if(checkItem){    
+    itemsFloat.forEach(item => item.classList.remove("active"))
+    toggleFloat.innerHTML = "menu"
+  } else {
+    itemsFloat.forEach(item => item.classList.add("active"));
+    toggleFloat.innerHTML = "close"
+  }
+}
+
 //NOTE CLOSE MENU WHEN CLICK ON LINK
 function toggleMenuDelayed(){
   let timer = setTimeout(function(){
     items.forEach(item => item.classList.remove("active"))
     toggle.innerHTML = "menu"
+    return timer;
+  }, 400)
+}
+
+function toggleMenuDelayedFloat(){
+  let timer = setTimeout(function(){
+    itemsFloat.forEach(item => item.classList.remove("active"))
+    toggleFloat.innerHTML = "menu"
     return timer;
   }, 400)
 }
@@ -86,23 +116,14 @@ function hoverToggleOff3(){
   projectBottomItem3.setProperty('display', 'none')  
 }
 
-//NOTE FOOTER FLOATING MENU
-const floatingMenu = document.querySelector('#floatingMenu');
-let menuOpen = false;
-floatingMenu.addEventListener("click", () => {
-  if(!menuOpen){
-    floatingMenu.classList.add("open")
-    menuOpen = true;
-  } else {
-    floatingMenu.classList.remove("open");
-    menuOpen = false;
-  }
-});
-
 //NOTE EVENT LISTENERS
 toggle.addEventListener('click', toggleMenu, false);
+toggleFloat.addEventListener('click', toggleMenuFloat, false);
 items.forEach(item => {
   item.addEventListener('click', toggleMenuDelayed, false);
+})
+itemsFloat.forEach(item => {
+  item.addEventListener('click', toggleMenuDelayedFloat, false);
 })
 projectBox1.addEventListener('mouseenter', hoverToggleOn1, false)
 projectbox1.addEventListener('mouseleave', hoverToggleOff1, false)

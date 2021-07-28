@@ -12,13 +12,13 @@
 }
 /* NOTE COMMON STYLES  */
 #gradientSeparatorY{
-  height: 100px;
+  height: 50px;
   width: 100%;
   background: rgb(238,236,221);
   background: linear-gradient(0deg, rgba(238,236,221,1) 0%, rgba(255,255,255,1) 100%);
 }
 #gradientSeparatorW{
-  height: 100px;
+  height: 50px;
   width: 100%;
   background: rgb(255,255,255);
   background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(238,236,221,1) 100%);
@@ -29,7 +29,7 @@
 }
 #text{
   color: var(--purple);
-  font-size: 10px;
+  font-size: 15px;
   margin-bottom: 5px;
 }
 #separatorPurple{
@@ -48,6 +48,9 @@
 a, a:visited{
   text-decoration: none;
   color: var(--yellow);
+}
+hr{
+  margin: 0;
 }
 
 /* NOTE HEADER STYLE */
@@ -161,7 +164,7 @@ a, a:visited{
   align-items: center;
   color: var(--blue);
   text-align: center;
-  margin: 25px 0;
+  margin-top: 25px;
 }
 #subTitle{
   font-size: 9px;
@@ -282,7 +285,7 @@ a, a:visited{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-bottom: 75px;
+  margin-bottom: 37.5px;
 }
 #projectBox1::after{
   content: "";
@@ -306,7 +309,7 @@ a, a:visited{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-bottom: 75px;
+  margin: 37.5px 0;
 }
 #projectBox2::after{
   content: "";
@@ -330,7 +333,7 @@ a, a:visited{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-bottom: 75px;
+  margin: 37.5px 0;
 }
 #projectBox3::after{
   content: "";
@@ -483,8 +486,8 @@ a, a:visited{
   justify-content: center;
 }
 #github, #linkedin, #youtube{
-  height: 35px;
-  width: 35px;
+  height: 45px;
+  width: 45px;
   border-radius: 50%;
 }
 #github{
@@ -532,13 +535,15 @@ a, a:visited{
   color: var(--yellow);
   font-size: 10px;
   margin-top: 0;
+  margin-right: 40px;
 }
 #footerLogo{
   font-size: 60px;
   margin-top: 15px;
   margin-bottom: 0;
+  margin-right: 40px;
   color: var(--yellow);
-  text-shadow: 0px 0px 20px black;
+  text-shadow: 0px 0px 5px var(--blue);
 }
 #anchor{
   position: absolute;
@@ -553,51 +558,65 @@ a, a:visited{
 }
 
 /* NOTE FOOTER FLOATING MENU */
-#floatingMenu{
+body{
   position: relative;
+}
+#floatingMenu{
+  position: absolute;
+  bottom: 90px;
+  right: 19px;
+  background-color: var(--blue);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 45px;
-  cursor: pointer;
-  transition: all 0.5s ease-in-out;
-  background-color: var(--blue);
-  margin-right: 20px;
-  margin-bottom: 70px;
+  font-size: 30px;
+  color: var(--yellow);
   border-radius: 50%;
-  border: 2px solid var(--yellow);
+  padding: 10px;
+  cursor: pointer;
+  z-index: 5;
+  border: 4px solid var(--yellow);
 }
-#floatingBurguer{
-  width: 25px;
-  height: 3px;
-  background-color: var(--yellow);
-  border-radius: 5px;
-  transition: all 0.5s ease-in-out;
+#navItemsBoxFloat{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--blue);
+  width: 200px;
+  position: absolute;
+  bottom: 160px;
+  right: 15px;
+  text-align: right;
 }
-#floatingBurguer::before, #floatingBurguer::after{
+#navItemFloat{
+  position: relative;
+  z-index: 2;
+  transition-duration: .3s;
+  display: none;
+  border-top: 2px solid var(--yellow);
+  width: 100%;
+  padding: 10px 0;
+  padding-right: 10px;
+}
+#navItemFloat:hover{
+  color: var(--blue);
+  cursor: pointer;
+}
+#navItemFloat::before{
   content: "";
   position: absolute;
-  width: 25px;
-  height: 3px;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
   background-color: var(--yellow);
-  border-radius: 5px;
-  transition: all 0.5s ease-in-out;
+  opacity: 0;
 }
-#floatingBurguer::before{
-  transform: translateY(-5px);
-}
-#floatingBurguer::after{
-  transform: translateY(5px)
-}
-/* Animation */
-#floatingMenu.open #floatingBurguer{
-  transform: translateX(-50px);
-  background: transparent;
-}
-#floatingMenu.open #floatingBurguer::before{
-  transform: rotate(45deg) translate(35px, -35px);
-}
-#floatingMenu.open #floatingBurguer::after{
-  transform: rotate(-45deg) translate(35px, 35px);
+#navItemFloat:hover::before{
+  left: 0;
+  right: 0;
+  z-index: -1;
+  opacity: 1;
+  transition-duration: .3s;
 }
