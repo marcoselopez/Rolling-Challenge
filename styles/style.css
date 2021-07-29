@@ -84,6 +84,7 @@ hr{
   #hero{
     height: 75vh;
     width: 100vw;
+    background-image: url("/images/heroBackground3Mobile2.jpg");
   }
   #hero::after{
     height: 75vh;
@@ -256,6 +257,7 @@ hr{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 70px;
 }
 #aboutProfile{
   display: flex;
@@ -300,7 +302,7 @@ hr{
 }
 @media (min-width: 1024px){
   #aboutMeContainer{
-    margin: 20px 0;
+    margin-top: 50px;
   }
   #aboutProfileImage{
     height: 200px;
@@ -323,7 +325,6 @@ hr{
 
 /* NOTE RESUME CONTENT */
 #resumeContainer{
-  background-color: var(--yellow);
   width: 100%;
   display: flex;
   justify-content: center;
