@@ -10,20 +10,25 @@
   font-family: 'Merriweather', serif;
   /* outline: 1px solid red; */
 }
+
 /* NOTE COMMON STYLES  */
 #gradientSeparatorY{
-  height: 50px;
+  height: 100px;
   width: 100%;
   background: rgb(238,236,221);
   background: linear-gradient(0deg, rgba(238,236,221,1) 0%, rgba(255,255,255,1) 100%);
 }
 #gradientSeparatorW{
-  height: 50px;
+  height: 100px;
   width: 100%;
   background: rgb(255,255,255);
   background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(238,236,221,1) 100%);
 }
 #title{
+  border-bottom: 1px solid var(--blue);
+  margin-bottom: 10px;
+}
+#titleSkills{
   border-bottom: 1px solid var(--blue);
   margin-bottom: 10px;
 }
@@ -48,9 +53,81 @@
 a, a:visited{
   text-decoration: none;
   color: var(--yellow);
+  z-index: 2;
 }
 hr{
   margin: 0;
+}
+
+/* ANCHOR HERO CONTENT */
+#hero{
+  height: 75vh;
+  width: 100%;
+  background-image: url("/images/heroBackground3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+#hero::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 75vh;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) -50%, rgba(0, 0, 0, 1) 300%);
+}
+@media (max-width: 735px){
+  #hero{
+    height: 75vh;
+    width: 100vw;
+  }
+  #hero::after{
+    height: 75vh;
+    width: 100vw;
+  }
+}
+#heroText1{
+  z-index: 2;
+  font-size: 6rem;
+  color: var(--yellow);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#heroText2{
+  z-index: 2;
+  font-size: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--yellow);
+  color: var(--yellow);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#heroText3{
+  z-index: 2;
+  color: var(--yellow); 
+  font-size: 1.5rem;
+}
+#heroArrow{
+  margin-top: 1rem;
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 50px solid var(--yellow);
+  z-index: 2;
+  transition-duration: .3s;
+}
+#heroArrow:hover{
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-top: 60px solid var(--yellow);
+  z-index: 2;
+  transition-duration: .3s;
 }
 
 /* NOTE HEADER STYLE */
@@ -126,6 +203,7 @@ hr{
   right: 50%;
   background-color: var(--yellow);
   opacity: 0;
+  border-radius: 5px;
 }
 #navItem:hover::before{
   left: 0;
@@ -133,6 +211,43 @@ hr{
   z-index: -1;
   opacity: 1;
   transition-duration: .3s;
+}
+@media (min-width: 1024px){
+  #navBar{
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+  }
+  #navProfileBox{
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  #navItem{
+    display: block;
+    border: none;
+    margin-left: 10px;
+    border-radius: 5px;
+    padding: 5px 0;
+  }
+  #navItemsBox{
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    margin-right: 10px;
+  }
+  #navProfileMenu{
+    display: none;
+  }
+  #navProfileItems{
+    font-size: 17px;
+  }
+  #navProfileImage{
+    height: 40px;
+    width: 40px;
+  }
 }
 
 /* NOTE ABOUT ME CONTENT */
@@ -182,6 +297,28 @@ hr{
 .progress-bar{
   background-color: var(--blue);
   transition-duration: 2s;
+}
+@media (min-width: 1024px){
+  #aboutMeContainer{
+    margin: 20px 0;
+  }
+  #aboutProfileImage{
+    height: 200px;
+  }
+  #text{
+    font-size: 12px;
+  }
+  #titleSkills{
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+  .progress{
+    height: 20px;
+  }
+  #subTitle{
+    font-size: 12px;
+  }
 }
 
 /* NOTE RESUME CONTENT */
@@ -245,10 +382,26 @@ hr{
   margin-bottom: 10px;
 }
 @media (min-width: 1024px){
+  #resumeTitleBox{
+    margin-bottom: 40px;
+  }
+  #resumeRow2{
+    margin-left: 20px;
+  }
+  #resumeRow1{
+    margin: 0;
+  }
   #resumeBox{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    border-left: 1px solid var(--blue);
+  }
+  .resumeTitle{
+    border-radius: 0px;
+  }
+  .resumeLabel, .resumeUL, .resumeSmallLabel{
+    margin-left: 10px;
   }
   .resumeUL{
     text-align: left;
@@ -260,9 +413,6 @@ hr{
   }
   #resumeContainer{
     align-items: flex-start;
-  }
-  #resumeRow1{
-    margin: 0;
   }
 }
 
@@ -450,7 +600,7 @@ hr{
   padding-top: 10px;
   color: var(--yellow);
   background-color: var(--blue);
-  margin-bottom: 50px;
+  margin: 50px 0;
 }
 
 /* NOTE FOOTER CONTENT */
@@ -459,14 +609,15 @@ hr{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--blue);
+  background-color: var(--yellow);
   box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 50%);
   position: relative;
+  margin-top: 50px;
 }
 #footerPolygon{
   height: 150px;
   width: 100%;
-  background-color: var(--yellow);
+  background-color: var(--blue);
   clip-path: polygon(0 0, 100% 0, 100% 12%, 5% 100%, 0 100%);
 }
 #footerBox{
@@ -532,7 +683,7 @@ hr{
   align-items: center;
 }
 #rights{
-  color: var(--yellow);
+  color: var(--blue);
   font-size: 10px;
   margin-top: 0;
   margin-right: 40px;
@@ -543,18 +694,39 @@ hr{
   margin-bottom: 0;
   margin-right: 40px;
   color: var(--yellow);
-  text-shadow: 0px 0px 5px var(--blue);
+  text-shadow: 2px 1px 1px var(--blue);
 }
 #anchor{
   position: absolute;
   bottom: 10px;
   right: 10px;
-  color: var(--yellow);
+  color: var(--blue);
   font-size: 30px;
 }
 #anchor:hover{
   cursor: pointer;
   margin-bottom: 10px;
+}
+@media (min-width: 1024px){
+  #footerSocials{
+    justify-content: center;
+  }
+  #footerRights{
+    width: 70%;
+  }
+  #github, #linkedin, #youtube{
+    margin: 30px 15px;
+    height: 70px;
+    width: 70px;
+  }
+  #floatingMenu{
+    position: absolute !important;
+    bottom: 75px !important;
+    right: 200px !important;
+  }
+  #anchor{
+    font-size: 50px;
+  }
 }
 
 /* NOTE FOOTER FLOATING MENU */

@@ -18,28 +18,36 @@
   <title>Marcos Lopez CV</title>
 </head>
 <body>
+  <!-- NOTE HERO -->
+  <section id="hero" class="d-flex justify-content-center align-items-center text-center flex-column">
+    <h1 id="heroText1">Hi!</h1>
+    <h2 id="heroText2">I'm Marcos</h2>
+    <h4 id="heroText3">Get to know me!</h4>
+    <a href="#aboutMeContainer"><div id="heroArrow"></div></a>
+  </section>
+  <!-- NOTE HEADER -->
   <header id="header">
     <!-- NOTE NAV BAR -->
     <nav id="navBar" class="row g-0">
-      <div id="navProfileBox" class="col-12 row g-0">
+      <div id="navProfileBox" class="col-lg-3 col-md-3 col-sm-12 row g-0">
         <div id="navProfileItems" class="col-8">
           <img id="navProfileImage" src="./images/profilePicture.jpg" alt="">
           <span>Marcos López</span>
         </div>
         <div id="navProfileMenu" class="col-3 material-icons">menu</div>
       </div>
-      <div id="navItemsBox" class="col-lg-6 col-12 row g-0">
-        <a href="#aboutMeContainer"><span id="navItem" class="col-lg-3 col-12">ABOUT ME</span></a>
-        <a href="#resumeContainer"><span id="navItem" class="col-lg-3 col-12">RESUME</span></a>
-        <a href="#projectsContainer"><span id="navItem" class="col-lg-3 col-12">MY PORTFOLIO</span></a>
-        <a href="#!"><span id="navItem" class="col-lg-3 col-12">SOFT/HARD SKILLS</span></a>
+      <div id="navItemsBox" class="col-lg-7 col-md-7 col-sm-12 row g-0">
+        <a href="#aboutMeContainer" id="navItem" class="col-lg-2 col-md-2 col-12"><span>ABOUT ME</span></a>
+        <a href="#resumeContainer" id="navItem" class="col-lg-2 col-md-2 col-12"><span>RESUME</span></a>
+        <a href="#projectsContainer" id="navItem" class="col-lg-3 col-md-3 col-12"><span>MY PORTFOLIO</span></a>
+        <a href="#!" id="navItem" class="col-lg-3 col-md-3 col-12"><span>SOFT/HARD SKILLS</span></a>
       </div>
     </nav>    
   </header>
   <main>
     <!-- NOTE ABOUT ME -->
     <section id="aboutMeContainer" class="row g-0">
-      <div id="aboutProfile" class="col-lg-4 col-11">
+      <div id="aboutProfile" class="col-lg-4 col-md-4 col-sm-11 col-11">
         <img id="aboutProfileImage" src="./images/profilePicture.jpg" alt="">
         <h5 id="title">MARCOS EMMANUEL LÓPEZ</h5>
         <p id="text">My name is Marcos López, i'm a 28 years old Argentinean hardware technician, full stack developer student, technology passionate and coffee enthusiast.</br></br>
@@ -47,8 +55,8 @@
           I'm in the process of discovering this wonderful world of development and, even though still learning, i'm already in love with it!.</p>
           <span id="separatorPurple"></span>
       </div>
-      <div id="aboutSkills" class="col-lg-7 col-11">
-        <h6 id="title">Developer Skills</h6>
+      <div id="aboutSkills" class="col-lg-6 col-md-6 col-sm-11 col-11">
+        <h6 id="titleSkills">Developer Skills</h6>
         <div id="SkillProgress">
           <span id="subTitle">HTML</span>
           <div class="progress">
@@ -102,10 +110,10 @@
     <div id="gradientSeparatorY"></div>
     <!-- NOTE RESUME -->
     <section id="resumeContainer" class="row g-0">
-      <div id="resumeTitleBox" class="col-11 text-center g-0">
+      <div id="resumeTitleBox" class="col-lg-12 col-md-12 col-11 text-center g-0">
         <h1>RESUME</h1>
       </div>
-      <div id="resumeRow1" class="col-lg-6 col-11 row g-0">
+      <div id="resumeRow1" class="col-lg-5 col-11 row g-0">
         <div id="resumeBox" class="col-11">
           <h3 class="resumeTitle">Summary</h3>
           <span class="resumeLabel">MARCOS EMMANUEL LÓPEZ</span>
@@ -140,7 +148,7 @@
         </div>
       </div>
       <div id="resumeRow2" class="col-lg-6 col-11 row g-0">
-        <div id="resumeBox" class="col-11">
+        <div id="resumeBox" class="col-12">
           <h3 class="resumeTitle">Job Experiences</h3>
           <span class="resumeLabel">IT MANAGER</span>
           <span class="resumeSmallLabel">2021-Present</span>
@@ -176,7 +184,7 @@
     <div id="gradientSeparatorW"></div>
     <!-- NOTE PROJECTS -->
     <section id="projectsContainer" class="row g-0">
-      <div id="projectsTitleBox" class="col-11 text-center g-0">
+      <div id="projectsTitleBox" class="col-lg-12 col-md-12 col-11 text-center g-0">
         <h1>MY PROJECTS</h1>
       </div>
       <div id="projectBox1" class="col-11">
@@ -222,6 +230,7 @@
     </div>
   </main>
   <!-- NOTE FOOTER -->
+  <div id="gradientSeparatorB"></div>
   <footer id="footerContainer">
     <div id="footerPolygon"></div>
     <div id="footerBox">
@@ -233,7 +242,7 @@
       </div>
       <div id="footerRights">
         <span id="footerLogo">ML</span>
-        <span id="rights">© Drechos Reservados <br>
+        <span id="rights">© Derechos Reservados <br>
         Marcos Emmanuel López</span>
       </div>
       <!-- <div id="floatingMenu">
