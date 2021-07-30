@@ -362,12 +362,12 @@ hr{
   width: 100%;
 }
 .resumeLabel{
-  font-weight: lighter;
+  font-weight: bolder;
   color: var(--blue);
   text-align: center;
 }
 .resumeSmallLabel{
-  font-weight: lighter;
+  font-weight: bold;
   color: var(--blue);
   font-size: 12px;
 }
