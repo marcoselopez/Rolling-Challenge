@@ -12,18 +12,6 @@
 }
 
 /* NOTE COMMON STYLES  */
-#gradientSeparatorY{
-  height: 100px;
-  width: 100%;
-  background: rgb(238,236,221);
-  background: linear-gradient(0deg, rgba(238,236,221,1) 0%, rgba(255,255,255,1) 100%);
-}
-#gradientSeparatorW{
-  height: 100px;
-  width: 100%;
-  background: rgb(255,255,255);
-  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(238,236,221,1) 100%);
-}
 #title{
   border-bottom: 1px solid var(--blue);
   margin-bottom: 10px;
@@ -80,7 +68,7 @@ hr{
   width: 100%;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) -50%, rgba(0, 0, 0, 1) 300%);
 }
-@media (max-width: 735px){
+@media (max-width: 1024px){
   #hero{
     height: 75vh;
     width: 100vw;
@@ -90,25 +78,33 @@ hr{
     height: 75vh;
     width: 100vw;
   }
+  #heroText1{
+    font-size: 100px !important;
+  }
+  #heroText2{
+    font-size: 60px !important;
+  }
 }
 #heroText1{
+  margin: 0;
   z-index: 2;
-  font-size: 6rem;
+  font-size: 150px;
   color: var(--yellow);
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 #heroText2{
   z-index: 2;
-  font-size: 3rem;
-  padding-bottom: 2rem;
+  font-size: 90px;
+  padding-bottom: 15px;
   border-bottom: 1px solid var(--yellow);
   color: var(--yellow);
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 #heroText3{
   z-index: 2;
   color: var(--yellow); 
   font-size: 1.5rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 #heroArrow{
   margin-top: 1rem;
@@ -284,7 +280,7 @@ hr{
   margin-top: 25px;
 }
 #subTitle{
-  font-size: 9px;
+  font-size: 11px;
 }
 .progress{
   height: 10px;
@@ -362,7 +358,7 @@ hr{
   width: 100%;
 }
 .resumeLabel{
-  font-weight: bolder;
+  font-weight: bold;
   color: var(--blue);
   text-align: center;
 }
@@ -602,6 +598,25 @@ hr{
   color: var(--yellow);
   background-color: var(--blue);
   margin: 50px 0;
+}
+
+/* NOTE SOFT SKILLS CONTENT */
+#softSkillsContainer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#softSkillBox{
+  height: 200px;
+  width: 250px;
+  /* outline: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#softSkillImage{
+  height: 120px;
 }
 
 /* NOTE FOOTER CONTENT */
