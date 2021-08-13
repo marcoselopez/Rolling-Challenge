@@ -68,23 +68,6 @@ hr{
   width: 100%;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) -50%, rgba(0, 0, 0, 1) 300%);
 }
-@media (max-width: 1024px){
-  #hero{
-    height: 75vh;
-    width: 100vw;
-    background-image: url("/images/heroBackground3Mobile2.jpg");
-  }
-  #hero::after{
-    height: 75vh;
-    width: 100vw;
-  }
-  #heroText1{
-    font-size: 100px !important;
-  }
-  #heroText2{
-    font-size: 60px !important;
-  }
-}
 #heroText1{
   margin: 0;
   z-index: 2;
@@ -103,7 +86,7 @@ hr{
 #heroText3{
   z-index: 2;
   color: var(--yellow); 
-  font-size: 1.5rem;
+  font-size: 25px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 #heroArrow{
@@ -126,7 +109,34 @@ hr{
   z-index: 2;
   transition-duration: .3s;
 }
-
+@media (max-width: 768px){
+  #hero{
+    height: 75vh;
+    width: 100vw;
+    background-image: url("/images/heroBackground3Mobile2.jpg");
+  }
+  #hero::after{
+    height: 75vh;
+    width: 100vw;
+  }
+  #heroText1{
+    font-size: 100px;
+  }
+  #heroText2{
+    font-size: 60px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px){
+  #heroText1{
+    font-size: 200px;
+  }
+  #heroText2{
+    font-size: 130px;
+  }
+  #heroText3{
+    font-size: 50px;
+  }
+}
 /* NOTE HEADER STYLE */
 #header{
   position: sticky;
@@ -228,6 +238,7 @@ hr{
     margin-left: 10px;
     border-radius: 5px;
     padding: 5px 0;
+    width: 150px;
   }
   #navItemsBox{
     flex-direction: row;
